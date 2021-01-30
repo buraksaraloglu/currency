@@ -65,6 +65,7 @@ $currency-margin-small: 0 0 0.5rem;
 
     &__title-container {
       height: 100%;
+
       &__title {
         margin: 0;
         font-size: 1rem;
@@ -84,6 +85,7 @@ $currency-margin-small: 0 0 0.5rem;
 
   &__price-container {
     display: flex;
+
     &__price-item {
       display: flex;
       align-items: flex-end;
@@ -125,17 +127,20 @@ $currency-margin-small: 0 0 0.5rem;
 
   @include media-breakpoint-down(lg) {
     margin-bottom: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
+
   }
 
-  @include media-breakpoint-down(sm) {
-    margin: 0 0 1.25rem;
-    padding: 0 0 1.25rem;
-
+  @include media-breakpoint-down(md) {
 
     &:nth-last-of-type(2) {
       border-bottom: 1px solid $g-border-color;
     }
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin: 0 0 .75rem;
+    padding: .75rem 0;
 
     &:last-of-type {
       border-bottom: 0;
@@ -153,7 +158,7 @@ $currency-margin-small: 0 0 0.5rem;
 
     &__price-container {
       &__price-item {
-        margin-left: 3.25rem;
+        margin-left: 1.25rem;
 
         &__price-cat {
           font-size: .8rem;

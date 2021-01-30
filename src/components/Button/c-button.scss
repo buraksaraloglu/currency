@@ -45,6 +45,11 @@
     }
   }
 
+  @include media-breakpoint-down(sm) {
+    padding: 1.1rem;
+    width: 100%;
+  }
+
 }
 
 .c-button-container {
