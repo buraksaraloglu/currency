@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 import Currency from '../components/Currency';
 import { ButtonMain, ButtonSecondary } from '../components/Button';
 import Converter from '../components/Converter';
+
+import fetchBuyPrices from '../hooks/fetchBuyPrices';
+import fetchSellPrices from '../hooks/fetchSellPrices';
 
 const CurrencyContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,40 +15,10 @@ const CurrencyContainer = () => {
 
   useEffect(() => {
     if (isLoading) {
-      const buyPrice = new Promise((resolve, reject) => {
-        const resArray = [];
-        try {
-          currencies.map(async (currency, index) => {
-            await axios
-              .get(`https://api.ratesapi.io/api/latest?base=${currency}&symbols=TRY`)
-              .then((res) => {
-                resArray.push({ data: res.data, id: index });
-                if (currencies.length - 1 === index) {
-                  resolve(resArray);
-                }
-              })
-              .catch((err) => {
-                throw new Error(err);
-              });
-          });
-        } catch (error) {
-          reject(error);
-        }
-      });
-
-      const sellPrice = Promise.resolve(
-        axios
-          .get(`https://api.ratesapi.io/api/latest?base=TRY&symbols=USD,EUR,GBP,JPY,DKK,NOK`)
-          .then((res) => res.data)
-          .catch((err) => {
-            throw new Error(err);
-          }),
-      );
-
-      Promise.all([buyPrice, sellPrice])
-        .then((values) => {
-          setBuyPrices(values[0]);
-          setSellPrices(values[1]);
+      Promise.all([fetchBuyPrices(currencies), fetchSellPrices()])
+        .then((value) => {
+          setBuyPrices(value[0]);
+          setSellPrices(value[1]);
           setIsLoading(false);
         })
         .catch((error) => {
