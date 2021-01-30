@@ -64,8 +64,9 @@ $currency-margin-small: 0 0 0.5rem;
     }
 
     &__title-container {
+      height: 100%;
       &__title {
-        margin: $currency-margin;
+        margin: 0;
         font-size: 1rem;
         font-weight: 700;
         text-transform: uppercase;
@@ -73,8 +74,8 @@ $currency-margin-small: 0 0 0.5rem;
       }
 
       &__long-name {
-        font-size: .9rem;
         margin: 0;
+        font-size: .9rem;
       }
     }
 
@@ -83,9 +84,12 @@ $currency-margin-small: 0 0 0.5rem;
 
   &__price-container {
     display: flex;
-
     &__price-item {
-      text-align: right;
+      display: flex;
+      align-items: flex-end;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
       margin-left: 4rem;
 
       @include media-breakpoint-down(xl) {
@@ -93,17 +97,19 @@ $currency-margin-small: 0 0 0.5rem;
       }
 
       &__price-cat {
-        margin: $currency-margin;
+        margin: 0;
         color: #4f6477;
-        font-size: 1rem;
-        font-weight: 600;
+        font-size: .9rem;
+        letter-spacing: 0.04em;
+        font-weight: 500;
         text-transform: uppercase;
       }
 
       &__price {
         margin: 0;
-        font-size: 1.1rem;
-        font-weight: 400;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.5;
       }
     }
 
@@ -122,8 +128,13 @@ $currency-margin-small: 0 0 0.5rem;
   }
 
   @include media-breakpoint-down(sm) {
-    margin: 0 0 1.625rem;
-    padding: 0 0 1.625rem;
+    margin: 0 0 1.25rem;
+    padding: 0 0 1.25rem;
+
+
+    &:nth-last-of-type(2) {
+      border-bottom: 1px solid $g-border-color;
+    }
 
     &:last-of-type {
       border-bottom: 0;
@@ -131,7 +142,6 @@ $currency-margin-small: 0 0 0.5rem;
 
     &__title-container {
       &__title {
-        margin: $currency-margin-small;
         font-size: 1rem;
       }
 
@@ -145,7 +155,6 @@ $currency-margin-small: 0 0 0.5rem;
         margin-left: 3.25rem;
 
         &__price-cat {
-          margin: $currency-margin-small;
           font-size: .8rem;
         }
 
