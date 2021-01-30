@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Layout from './components/Layout';
-import Title from './components/Title/Title';
+import Title from './components/Title';
 
 import CurrencyContainer from './containers/CurrencyContainer';
 
