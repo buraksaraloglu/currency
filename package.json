@@ -2,6 +2,7 @@
   "name": "doviz",
   "version": "0.1.0",
   "private": true,
+  "author": "Burak Saraloglu",
   "dependencies": {
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
@@ -18,10 +19,7 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^7.1.0",
     "node-sass": "^4.0.0",
-    "prettier": "2.2.1",
-    "stylelint": "^13.2.1",
-    "stylelint-config-prettier": "^8.0.1",
-    "stylelint-prettier": "^1.1.2"
+    "prettier": "2.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
