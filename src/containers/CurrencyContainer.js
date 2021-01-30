@@ -55,8 +55,6 @@ const CurrencyContainer = () => {
     }
   }, [currencies, isLoading]);
 
-  console.log(buyPrices);
-
   return (
     <>
       {isLoading && <div>Loading...</div>}
