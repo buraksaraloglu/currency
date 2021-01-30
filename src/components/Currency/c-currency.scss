@@ -1,0 +1,162 @@
+@import '../../styles/abstracts/index';
+
+$currency-margin: 0 0 0.6rem;
+$currency-margin-small: 0 0 0.5rem;
+
+
+.c-currency {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-gap: 0 100px;
+  margin: 0;
+  padding: 0;
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(2, 350px);
+    grid-gap: 0 60px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    grid-template-columns: repeat(2, 430px);
+    grid-gap: 0 100px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+    grid-template-columns: repeat(2, 407.33px);
+  }
+
+  @include media-breakpoint-down(md) {
+    max-width: 100%;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: unset;
+  }
+}
+
+
+.c-currency-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: fit-content;
+  margin: 0 0 1rem;
+  padding: 0 0 1rem;
+  border-bottom: 1px solid $g-border-color;
+
+  &:last-of-type,
+  &:nth-last-of-type(2) {
+    border-bottom: 0;
+  }
+
+  &__left {
+    display: flex;
+
+    &__flag {
+      justify-self: flex-start;
+      margin-right: .5rem;
+
+      img {
+        width: 2rem !important;
+        height: auto !important;
+        border: 1px solid $g-border-color;
+        border-radius: 4px;
+      }
+    }
+
+    &__title-container {
+      &__title {
+        margin: $currency-margin;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.03em;
+      }
+
+      &__long-name {
+        font-size: .9rem;
+        margin: 0;
+      }
+    }
+
+  }
+
+
+  &__price-container {
+    display: flex;
+
+    &__price-item {
+      text-align: right;
+      margin-left: 4rem;
+
+      @include media-breakpoint-down(xl) {
+        margin-left: 2rem;
+      }
+
+      &__price-cat {
+        margin: $currency-margin;
+        color: #4f6477;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      &__price {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 400;
+      }
+    }
+
+    .buy {
+      margin-left: 1.25rem;
+
+      @include media-breakpoint-down(xl) {
+        margin-left: 0rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin: 0 0 1.625rem;
+    padding: 0 0 1.625rem;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+
+    &__title-container {
+      &__title {
+        margin: $currency-margin-small;
+        font-size: 1rem;
+      }
+
+      &__long-name {
+        font-size: .9rem;
+      }
+    }
+
+    &__price-container {
+      &__price-item {
+        margin-left: 3.25rem;
+
+        &__price-cat {
+          margin: $currency-margin-small;
+          font-size: .8rem;
+        }
+
+        &__price {
+          font-size: 1rem;
+        }
+      }
+
+      .buy {
+        margin-left: 0;
+      }
+    }
+  }
+}

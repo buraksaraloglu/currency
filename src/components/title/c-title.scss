@@ -1,0 +1,18 @@
+@import '../../styles/abstracts/index';
+
+.c-title {
+  margin: 3rem 0;
+
+  &__title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin: 1.5rem 0;
+    &__title{
+      font-size: 1.6rem;
+    }
+  }
+}

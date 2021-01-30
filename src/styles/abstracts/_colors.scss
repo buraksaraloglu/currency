@@ -38,6 +38,8 @@ $color-black: #000;
 // Custom Colors
 //
 
+$text-color: #2b3b48;
+
 //
 // Project Colors
 //
@@ -58,7 +60,7 @@ $g-text-color: color-palette('gray', 900) !default;
 $g-headings-color: inherit !default;
 $g-link-color: $color-primary !default;
 $g-link-hover-color: darken($g-link-color, 15%) !default;
-$g-border-color: #f1f1fa !default;
+$g-border-color: #eaeef2 !default;
 $g-border-color-hover: darken($g-border-color, 2%) !default;
 $g-text-muted-color: color-palette('gray', 600) !default;
 $g-hr-border-color: $g-border-color !default;

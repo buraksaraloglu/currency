@@ -1,0 +1,77 @@
+@import '../../styles/abstracts/index';
+
+.c-button {
+  background: transparent;
+  outline: 0;
+  border: 0;
+  padding: 1.1rem 5rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  font-weight: 500;
+
+  &__main {
+    color: $color-white;
+    background: $text-color;
+  }
+
+  &__secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid $text-color;
+
+    svg {
+      display: none;
+      margin-left: 0.5rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 1.1rem 5rem;
+    width: 100%;
+    margin: .625rem 0;
+
+    &__secondary {
+      border: 0;
+
+      svg {
+        display: block;
+      }
+    }
+  }
+
+}
+
+.c-button-container {
+  display: grid;
+  grid-template-columns: repeat(2, 350px);
+  grid-gap: 0 100px;
+  width: fit-content;
+  margin: 1rem 0;
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(2, 350px);
+    grid-gap: 0 60px;
+    margin: 0;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    grid-template-columns: repeat(2, 430px);
+    grid-gap: 0 100px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @include media-breakpoint-down(md) {
+    max-width: 100%;
+    grid-template-columns: repeat(1, auto);
+  }
+}

@@ -1,0 +1,18 @@
+@import '../../styles/abstracts/index';
+
+body {
+  align-items: center;
+  font-family: 'Roboto', 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+  font-size: 16px;
+  color: $text-color;
+}
+
+.o-main {
+  @include make-grid-container-max-widths();
+  @include make-grid-container($gutter: px-to-rem(64px));
+
+  @include media-breakpoint-down(sm) {
+    @include make-grid-container($gutter: px-to-rem(32px));
+  }
+
+}
